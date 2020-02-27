@@ -14,8 +14,10 @@ public class BinaryUI extends GBFrame {
 	JTextField searchInput = addTextField("", 3,4,2,1);
 	JTextArea output = addTextArea("", 1,4,2,2);
 	JLabel spacer = addLabel("this is for spacing bc bad", 4,2,2,1);
+	EpicArray people;
 	
 	public BinaryUI() {
+		people = new EpicArray();
 		search.setEnabled(false);
 		output.setEditable(false);
 		searchInput.setEnabled(false);
@@ -36,6 +38,11 @@ public class BinaryUI extends GBFrame {
 			//add person
 			//update sorted text area
 			//enable search buttons + text fields
+			people.add(new Person("Zach", 37));
+			people.add(new Person("Alex", 15));
+			people.add(new Person("Daniel", 25));
+			people.add(new Person("Charlie", 12));
+			output.setText(new Sorter(people).sortNames().toString());
 		}
 		if(button == search) {
 			
