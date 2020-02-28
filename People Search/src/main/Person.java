@@ -24,6 +24,6 @@ public class Person {
 	}
 	
 	public int compareTo(Object obj) {
-		return name.compareTo(((Person)obj).getName());
+		return name.toLowerCase().compareTo(((Person)obj).getName().toLowerCase());
 	}
 }
